@@ -1,0 +1,22 @@
+{
+  "name": "snippets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "express-validator": "^4.1.0",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.10.8",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.5"
+  }
+}

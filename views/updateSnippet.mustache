@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {{#onesnip}}
+    <form class="form1" action="/:id" method="post">
+      <input type="text" name="title" value="{{title}}" placeholder="Title">
+      <textarea name="snippet" rows="8" cols="40" placeholder="Code Snippet...">{{snippet}}</textarea>
+      <textarea name="notes" rows="4" cols="40" placeholder="Notes...">{{notes}}</textarea>
+      <input type="text" name="language" value="{{language}}" placeholder="language">
+      <input type="text" name="tags" value="{{tags}}" placeholder="Tags (one word seperate by space)">
+      <button type="submit" name="button">update</button>
+    </form>
+    {{/onesnip}}
+  </body>
+</html>

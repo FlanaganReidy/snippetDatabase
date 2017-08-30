@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="public/style.css">
+  </head>
+  <body>
+    <div class="container">
+
+    </div>
+    <form class="form1" action="/" method="post">
+      <input type="text" name="title" value="" placeholder="Title">
+      <textarea name="snippet" rows="8" cols="40" placeholder="Code Snippet..."></textarea>
+      <textarea name="notes" rows="4" cols="40" placeholder="Notes..."></textarea>
+      <input type="text" name="language" value="" placeholder="language">
+      <input type="text" name="tags" value="" placeholder="Tags (one word seperate by space)">
+      <button type="submit" name="button">Save</button>
+    </form>
+
+    {{#mySnippets}}
+
+      <a href="/{{id}}">{{title}}</a>
+      <p>{{snippet}}</p>
+      <p>{{notes}}</p>
+      <p>{{language}}</p>
+      <p>{{tags}}</p>
+
+    {{/mySnippets}}
+
+      </div>
+
+  </body>
+</html>
