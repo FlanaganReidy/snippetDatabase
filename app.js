@@ -51,6 +51,10 @@ app.post('/', function(req, res, next) {
         mySnippets: mySnippets
       })
     })
+    .catch(function(error){
+      console.log('error' + JSON.stringify(error));
+      res.redirect('/')
+    })
 
 
 })
@@ -63,6 +67,10 @@ app.get('/:id', function(req, res, next) {
       res.render('updateSnippet', {
         oneSnip:mySnippets
       })
+    })
+    .catch(function(error){
+      console.log('error' + JSON.stringify(error));
+      res.redirect('/')
     })
 })
 
@@ -90,6 +98,25 @@ app.post('/:id', function(req, res, next) {
         mySnippets: mySnippets
       })
     })
+    .catch(function(error){
+      console.log('error' + JSON.stringify(error));
+      res.redirect('/')
+    })
+})
+
+app.post('/delete/:id', function(req,res,next){
+  let id = req.params.id;
+  Snippet.findOneAndRemove({
+      _id: new ObjectId(id)
+    })
+    .then(function() {
+      res.redirect('/');
+    })
+    .catch(function(error){
+      console.log('error' + JSON.stringify(error));
+      res.redirect('/')
+    })
+
 })
 
 app.listen(3000, function() {
