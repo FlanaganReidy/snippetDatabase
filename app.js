@@ -143,7 +143,7 @@ app.post('/display', function(req, res, next) {
 
 app.post('/search', function(req, res, next) {
   const searchTerm = req.body.searchTerm;
-  Snippet.find({tags: searchTerm})
+  Snippet.find({$or:[{tags: searchTerm},{language:searchTerm}]})
     .then(function(mySnippets) {
       console.log(mySnippets);
       res.render('search', {
