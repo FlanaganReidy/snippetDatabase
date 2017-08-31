@@ -6,10 +6,18 @@
     <link rel="stylesheet" href="public/style.css">
   </head>
   <body>
+    <header>
+      <a href="/logout">Log Out</a>
+      <p>Welcome {{#user}}{{username}}{{/user}}</p>
+    </header>
     <div class="container">
 
-    </div>
-    <form class="form1" action="/" method="post">
+    <form class="" action="/search" method="post">
+        <input type="text" name="searchTerm" value="" placeholder="search by single tag">
+        <button type="submit" name="button">Search</button>
+    </form>
+
+    <form class="form1" action="/display" method="post">
       <input type="text" name="title" value="" placeholder="Title">
       <textarea name="snippet" rows="8" cols="40" placeholder="Code Snippet..."></textarea>
       <textarea name="notes" rows="4" cols="40" placeholder="Notes..."></textarea>
@@ -17,14 +25,19 @@
       <input type="text" name="tags" value="" placeholder="Tags (one word seperate by space)">
       <button type="submit" name="button">Save</button>
     </form>
-
+    <!-- <a href="/search">Search by tag</a> -->
     {{#mySnippets}}
-
-      <a href="/{{id}}">{{title}}</a>
-      <p>{{snippet}}</p>
-      <p>{{notes}}</p>
-      <p>{{language}}</p>
-      <p>{{tags}}</p>
+      <dl class="">
+        <dt><h3><a href="/{{id}}">{{title}}</a></h3></dt>
+        <dt><h5>Code Snippet</h5></dt>
+        <dd>{{snippet}}</dd>
+        <dt><h5>Notes</h5></dt>
+        <dd>{{notes}}</dd>
+        <dt><h5>Language</h5></dt>
+        <dd>{{language}}</dd>
+        <dt><h5>Tags</h5></dt>
+        <dd>{{tags}}</dd>
+      </dl>
       <form class="" action="/delete/{{id}}" method="post">
         <button type="submit" name="button">Delete</button>
       </form>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>search</title>
+  </head>
+  <body>
+    <div class="container">
+    <a href="/display">All Snippets</a>
+    {{#mySnippets}}
+      <dl class="">
+        <dt><h3><a href="/{{id}}">{{title}}</a></h3></dt>
+        <dt><h5>Code Snippet</h5></dt>
+        <dd>{{snippet}}</dd>
+        <dt><h5>Notes</h5></dt>
+        <dd>{{notes}}</dd>
+        <dt><h5>Language</h5></dt>
+        <dd>{{language}}</dd>
+        <dt><h5>Tags</h5></dt>
+        <dd>{{tags}}</dd>
+      </dl>
+      <form class="" action="/delete/{{id}}" method="post">
+        <button type="submit" name="button">Delete</button>
+      </form>
+    {{/mySnippets}}
+    {{^mySnippets}}
+    <form class="" action="/search" method="post">
+      <input type="text" name="searchTerm" value="" placeholder="search by single tag">
+      <button type="submit" name="button">Search</button>
+    </form>
+    {{/mySnippets}}
+  </div>
+  </body>
+</html>
